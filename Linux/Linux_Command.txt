@@ -1,0 +1,252 @@
+Linux Command
+=================
+
+whoami 
+
+|-this command allow linux user to see the currently logged-in user.
+|-The output displays the username of the effective user in the current shell.
+
+
+pwd
+|-print working directory
+
+# To Make directory
+
+mkdir <dir-name>
+
+e.g:- mkdir aws
+
+# To delete empty directory
+
+rmdir <dir-name>
+
+e.g: rmdir aws
+
+
+# To list out all files & directories in present working directory
+
+ls -l
+
+# To move inside the directory(change directory)
+
+cd <dir-name>
+
+e.g: cd aws
+
+# To come out from the directory
+cd ..
+
+
+# Display current month calendar
+cal
+
+# Display current date and time
+date
+
+# To clear terminal
+clear
+
+# To logout session.
+exit
+
+cat : It is used to print file data from top to bottom.
+
+tac : It is reverse of cat(Prints file data from bottom to top)
+
+head: It is used to print file data from top to bottom (by default it print first 10 lines only)
+
+    syntax: head <file-name>
+            head test6.txt (it reads first 10 lines)
+            head -n 5 test6.txt (it reads first 5 lines)
+            head -n 12 test6.txt (it reads first 12 lines)
+
+tail: It is used to print file data from bottom to top (by default it print first 10 lines only)
+      syntax: tail <file-name>
+              tail test6.txt (it reads last 10 lines data)
+              tail -n 5 test6.txt (it reads last 6 lines data)
+              tail -n 12 test6.txt (it reads last 12 lines data)
+              tail -n +3 test6.txt(it reads from 3rd line to bottom)
+
+
+Note: Application log messages will be appended at bottom of the file. To read latest log messages we need to use 'tail' command
+
+
+wc: It is used to print no of lines, no of words and no of characters in given file.
+
+	Syntax: wc <file-name>
+         E.g:   wc test6.txt
+
+
+GREP
+
+
+|-Grep stands for 'Global Regular Expression Print
+
+
+|-It is used to find the data in the file (CTRL+F)
+
+|-Grep cmd will process the text line by line and it prints which are matched with given pattern.
+
+
+# Adding new User
+sudo useradd <user-name>
+
+e.g:- sudo useradd john
+
+# finding id of user
+id <user-name>
+
+e.g: id john
+
+# setting password for user
+ sudo passwd <user-name>
+
+e.g: sudo passwd john
+
+How we can switch from current user to Root user
+==================================================
+sudo su
+
+
+How to come out from current user
+====================================
+exit
+
+
+How to switch from current user to other user
+=============================================
+sudo su <user-name>
+
+e.g:- sudo su john
+
+
+
+chown
+
+|-"chown" command is used to change file ownership
+
+
+syntax:
+=======
+          chown <user-name> <file-name>
+
+   e.g:   chown john m1.txt
+
+Note: chown: changing ownership of 'm1.txt': Operation not permitted
+
+|-To give privilege we use sudo
+
+
+syntax:
+=======
+         sudo chown <user-name> <file-name>
+
+   e.g:   sudo chown john m1.txt
+
+#Changing owner of a file
+
+sudo chown <uname> <filename>
+
+# we can change file owner using userID also
+ sudo chown <UID> <filename>
+
+Note: We can get UID for username using 'id uname' command
+
+id <username>
+
+e.g: id john
+
+
+#Change group of a file
+sudo chown :groupname <fileName>
+
+# list out all available user
+
+cat /etc/group
+
+
+Working with locate and find commands
+====================================
+
+|-find and locate commands are used to search file in linux Machine.
+
+#Search files which contains apache
+
+locate apache
+
+#Search files and display count which contains apache
+
+locate -c apache
+
+# print all .txt files
+locate *.txt
+
+# print the count of all .txt files
+locate -c *.txt
+
+# display only emtpy files
+sudo find /home -type f -empty
+
+# diplay only empty directories
+sudo find /home -type d -empty
+
+Note:-
+=======
+|- find command will search in entire linux file system.
+
+Note:
+=====
+|- To get documentation of any command we can use 'man' command
+
+man find
+man ls
+man ping
+
+Networking Commands
+===================
+
+ifconfig : It is used to print ip address of your machine
+
+wget     : It is used to download a file based on URL
+     syntax: wget <url>
+     e.g   : wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.80/bin/apache-tomcat-9.0.80.tar.gz
+
+
+curl: It is used to send HTTP request to URL
+     syntax: curl <url>
+     e.g:    curl https://jsonplaceholder.typicode.com/posts
+
+ping: It is used to check network connectvity
+     syntax: ping <url>
+      e.g:   ping www.google.com
+
+create user in linux
+===================
+
+# create user
+sudo useradd <username>
+
+# verify account details
+ id <user-name>
+
+# create a group
+sudo groupadd <groupname>
+
+# Add user to group
+sudo usermod -aG <group-name> <user-name>
+
+# Remove user from the group
+sudo gpassed -d <user-name> <group-name>
+
+# Delete group
+sudo groupdel <group-name>
+
+# delete user
+sudo userdel <username>
+
+# Display all groups
+cat /etc/group
+
+# list all users in linux
+cat /etc/passwd
+

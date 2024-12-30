@@ -1,0 +1,234 @@
+Linux
+======
+
+What is Operating System(OS)?
+===============================
+
+|-Operating System is a software which is used to interact with computer.
+
+|-OS will act as mediator between users and computer hardware components.
+
+|-OS is mandatory to use any computer.
+
+|-OS provides environment to run other applications
+  Ex: Notepad.Paint, Browser etc...
+
+Windows Operating System
+==========================
+|-It is having GUI(Graphical User interface)
+
+|-It is Commercial(paid)
+
+|-It is single user based operating system.
+
+|-Less Security Features
+
+|-It is recommended for Personal Use.
+
+Linux Operating System
+========================
+
+|-Linux is Free & Open Source OS
+
+|-Linux is Multi User Based OS
+
+|-High Security Features
+
+|-Linux is Community Based OS
+
+|-Recommended for Appliication Servers, databases etc.
+
+
+Linux OS Distribution
+=====================
+
+|-As Linux OS is open source, so many people and companies taken that linux OS and modified according to their requirement and released into market
+  with different names those are called as Linux Distribution
+
+RED HAT
+Ubuntu OS
+Cent OS
+Fedora
+Amazon Linux
+
+Linux File System
+===================
+|-In Linux everything is considered as file.
+
+|-In Linuc there are 3 different types of files
+
+1.Regular File or ordinary files
+2. Directory files
+3.Special files or device files
+
+1.Regular File or ordinary files
+===================================
+
+|- Ordinary files can contain text,data or program information.
+|- An ordinary file can't contain another files, or directory.
+
+
+2. Directory files
+===================
+|- We can described directories as containers that can hold files and other directorues.
+|-Directory is group of files.
+|-Directory is divided into two types
+
+ - Root Directory
+     |-Strictly speaking, there is only one root directory in your system which is denoted by /(forward slash)
+     |-It is root of your entire file system and can not be renamed or deleted
+ 
+-Sub directory
+  |-Directory under root(/) directory is subdirectory which can be created,renamed by the user.
+
+
+3.Special files or device files
+================================
+|- Special files represent input/output devices, like a tty(terminal), a disk drive, or a printer.
+
+
+How to install required software in linux
+#########################################################
+
+sudo yum install httpd
+
+
+What is package Manager
+=========================
+|- It is a tool that allows users to install, remove, upgrade softwares on an operating system.
+
+Ex: yum, apt, rpm, deb, chocklate etc...
+
+|- Linux Package Managers are used to install, remove,upgrade packages in linux os.
+
+
+What is Package?
+=================
+
+|- Package means it is one application.
+
+Ex: httpd, git,maven,java,docker,jenkins, etc..
+
+
+
+Which package manager we need to use?
+=========================================
+RPM Based Linux Distributions: Amazon linux, Red Hat Linuc, Cent OS ettc..
+
+  Package Manager: yum,rpm,dnf
+
+DEB Based Linux Distributions: Ubuntu linux, Debian Linuc etc..
+  Package Manager: apt
+
+Top 5 Package Managers
+=========================
+1) YUM : yellowdog Updater, Modified
+2) APT : Advanced Packaging Tool
+3) RPM : Red Hat Package Manager
+4) DPKG : Debian Package Management System
+5) DNF  : Dandified YUM
+
+
+Q) How to install webserver in Red Hat Linux?
+==================================================
+sudo yum install httpd
+
+Q) How to install webserver in Ubuntu?
+========================================
+sudo apt install apache2
+
+
+Working With Linux File Permissions and User Accounts
+###############################################################
+
+|- A file can have 3 permissions
+
+1) Read (r)
+2) Write (w)
+3) Execute (X)
+
+|- File permissions are divided into 3 sections
+
+Section-1 : User Permissions (first 3 characters represents user permissions)
+
+Section-2 : Group Permissions (from 4th to 6th characters represents group permissions)
+
+Section-3 : Others Permissions (From 7th to 9th characters others permissions)
+
+  rwxrwxrwx
+
+User  -> having read,write & execute permissions
+Group -> having read,write & execute permissions
+others -> having read,write & execute permissions
+ 
+
+  rw-rw-r--
+
+User  -> having read,write  permissions
+Group -> having read,write  permissions
+others -> having only read permissions
+
+ r--r--r-x
+
+User  -> having read  permissions
+Group -> having read  permissions
+others -> having  read & execute permissions
+
+
+################################
+Modifying File Permissions
+###############################
+
+|- Using 'chmod' command we can change file permissions in Linux OS.
+
+|-Using 'chmod' we can add or remove permission.
+
+# Add execute permission for the user
+chmod u+x linux.txt
+
+# Remove execute permission for the user
+chmod u-x linux.txt
+
+# Add execute permission for the group
+chmod g+x linux.txt
+
+# Remove execute permission for the group
+chmod g-x linux.txt
+
+
+# Add write permission for user
+chmod u+w linux.txt
+
+# Add write and execute permission for the user
+chmod u+wx linux.txt
+
+# Add execute permission for others
+chmod o+x linux.txt
+
+
+################################################
+File Permission with Numeric Numbers
+################################################
+
+0 - No permission
+1 - only Execute
+2 - Only write
+3 - Execute & Write
+4-  Only Read
+5 - Read & Write
+6 - Read & Write
+7 - Read, write & Execute
+
+
+chmod 765 player.txt
+
+user   -> rwx
+group  -> rw
+others -> rx
+
+
+chmod 777 player.txt
+
+user  -> rwx
+group -> rwx
+other -> rwx

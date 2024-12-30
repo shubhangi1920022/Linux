@@ -1,0 +1,168 @@
+#Shell Scripting In Linux
+##########################
+
+Linux contains two parts
+1.Shell
+2.Kernel
+
+1.Shell
+==========
+
+|-Shell is responsible for reading commands given by user.
+
+|-Shell will verify command and will give instructions to kernel to process that command.
+
+|-if command is invalid shell will give error
+
+|-Kernel will execute our command with System Hard Components
+
+|-Shell acts as mediator between User and Kernel.
+
+       User ---> Shell----->Kernel----->H/W
+
+|- Shell is user program or its environment provided for user interaction.
+
+|-Shell is an command language interpreter that executes commands read from the standard input device(keyboard) or from a file.
+
+#############################
+What is Scripting?
+#################################
+
+|-Scripting means set of commands mentioned in a file for execution.
+
+|-Scripting is used to automate our routine work.
+
+
+|-For example I want to execute below commands every day as linux user.
+
+date
+cal
+whoami
+pwd
+ls -l
+
+
+|-Instead of executing all these commands manually we can keep them in a file and we can execute that file.
+
+|-The file which contains set of commands for execution is called  as 'Script file'.
+
+
+########################
+What is Shell Scripting?
+#############################
+
+|-Shell Scripting is used to execute set of commands using a script file.
+
+|-When we execute script file then shell will read those commands and will verify commands syntax.
+
+|-kernel will give instructions to hardware components to perform actual operation.
+
+###############################
+Use of shell Scripting
+################################
+
+|-Automating your daily tasks, for example, you a may want to back up all yoour programs at the end of day. This can be done using a shell script.
+
+|-Automating repetitive tasks, for example, the repettive task of complinga c program and executing.
+
+|-It saves lot of work
+
+################################
+Types of Shells
+###############################
+
+|-There are several shells available in linux OS.
+
+1) Bourne Shell
+2) Bash Shell
+3) Korn Shell
+4) CShell
+5) TShell
+6) ZShell
+
+# Display all the shells of our linux machines
+ cat /etc/shells
+
+
+# Display the default shell of our linux machine
+echo $SHELL
+
+Note: The most commonly shell used in linux in is 'BASH SHELL'.
+
+
+Note: Shell Script files will have .sh extension
+
+
+#################################################
+Working with First Shell Script Program
+###############################################
+
+Step-1 Create script file using vi editor
+    vi task.sh
+
+Step-2 write some commands thats needs to execute
+ whoami
+ pwd
+ date
+
+Save the file and close it(Esc+:wq)
+
+Step-3 Run the shell script(Option-1)
+
+sh task.sh
+
+Note: If we get permission denied then we should provide 'execute' permission using 'chmod' command
+
+# Run the shell script(Option-2)
+ ./tash.sh
+
+#######################################
+What is sha-bang in shell scripting?
+#######################################
+
+|-Sha-bang is used to specify which shell should be used to cat process our script
+
+Syntax:
+=========
+#! /bin/bash
+
+
+************************* Shell Script -2*************************
+
+#! /bin/bash
+
+echo "welcome to Scripting"
+echo "Scripting is used to execute set of commands"
+echo "Scripting requires lot of practice"
+vi 
+
+
+************************* Shell Script -3*************************
+
+#! /bin/bash
+
+echo "Enter your name:"
+read name
+echo "Good Morning $name"
+
+
+
+************************* Shell Script -4*************************
+#! /bin/bash
+a=10
+b=20
+c=$(($a+$b))
+echo "sum of $a and $b= $c"
+
+************************* Shell Script -5*************************
+
+
+#! /bin/bash
+echo "Enter First Number"
+read a
+echo "Enter Second number"
+read b
+c=$(($a+$b))
+echo "sum of $a and $b= $c"
+
+
