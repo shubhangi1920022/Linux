@@ -1,0 +1,103 @@
+Docker Commands
+================
+#Docker version
+>docker --version
+
+#To see docker info
+>docker info
+
+#To List out available images
+>docker images
+
+#To pull image
+>docker pulll <IMAGE_NAME>
+
+docker ps - list only currently running container
+
+docker ps -a - list all container including running, stopped, exited
+
+docker rm - remove container
+syntax:
+docker rm container_name
+
+docker rmi - remove image
+syntax:
+docker rmi image_name
+
+download image
+================
+docker run image_name
+docker pull image_name
+
+difference between pull and run command
+docker pull
+============
+-Downloads a Docker image from a registry (e.g., Docker Hub) to your local system.
+-When you want to download an image for later use, without running it immediately.
+
+docker pull
+===========
+-Runs a Docker container from an image. If the image is not already present locally, it will automatically pull it first.
+-When you want to create and start a container directly from an image.
+
+docker stop - stop the currently running container
+syntax:
+docker stop container_Id
+
+Attached and detached mode:
+============================
+
+Attached Mode
+-The container's standard input (stdin), output (stdout), and error (stderr) streams are connected to your terminal.
+This allows you to interact with the container directly.
+-For debugging or interacting with a container in real-time.
+-When running commands that require user input or monitoring logs.
+
+Detached Mode
+-The container runs in the background without being connected to your terminal.
+-You won’t see logs or output unless you explicitly attach to the container later.
+-For long-running or production-like services where you don’t need to interact with the container directly.
+-To free up the terminal for other tasks.
+
+port mapping
+=============
+-Port mapping in Docker allows you to make services running inside a Docker container accessible to the outside world (e.g., your host system or other devices on the network). 
+-It binds a port on your host machine to a port on the container.
+-Docker uses the -p or --publish flag to define port mappings.
+
+syntax:
+docker run -p <host_port>:<container_port> <image>
+
+where
+-<host_port>: The port on the host machine.
+-<container_port>: The port inside the container.
+-<image>: The Docker image to run.
+
+inspect
+-The docker inspect command retrieves detailed, low-level information about Docker objects, such as containers, images, networks, or volumes.
+
+syntax:
+docker inspect container_id
+
+-Provides JSON output with information about the container:
+--Container configuration (e.g., environment variables, exposed ports).
+--State (e.g., running, stopped).
+--Networking details (e.g., IP address, MAC address).
+
+syntax:
+docker inspect image_id
+
+-Displays metadata about the image, such as:
+--Image size.
+--Layers and their digests.
+--Build arguments used to create the image.
+
+docker log
+-Monitor application output and errors.
+-Debug failed container starts.
+-View real-time logs of running services.
+
+syntax:
+docker logs container_id
+
+
