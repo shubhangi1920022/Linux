@@ -1,0 +1,113 @@
+REDIS
+=========
+Redis is an in-memory data structure that is used for faster access to data. It is used to store data that needs to be accessed frequently and fast. It is not used for storing large amounts of data. If you want to store and retrieve large amounts of data you need to use a traditional database such as MongoDB or MYSQL. Redis provides a variety of data structures such as sets, strings, hashes, and lists.
+
+The Redis server is a program that runs and stores data in memory.
+You can just connect to that server and can use it to store and retrieve data faster.
+For that reason, Redis is not used for persistent storing of data as complete data will be lost if the system crashes.
+Redis is scalable as you can run multiple instances of the server.
+It is often used as a cache that stores data temporarily and provides faster access to frequently used data.
+
+MAVEN
+===========
+Maven is an open-source build automation tool used to manage and build Java projects. It's a popular tool that helps developers simplify the build process and manage dependencies. 
+
+What does Maven do? 
+======================
+Builds: Automatically compiles source code, packages binary code, and executes test scripts
+Manages dependencies: Automatically downloads project libraries, JARs, and other files
+Documents: Creates documentation for the project
+Publishes: Publishes the project's distribution
+Manages releases: Manages the project's release cycle
+Collaborates: Helps teams collaborate on projects
+
+How does Maven work?
+=======================
+Maven uses a Project Object Model (POM) to configure and operate 
+Maven reads the pom.xml file to learn about the project and its dependencies 
+Maven uses conventions to build the project, with exceptions specified only when needed 
+
+Why use Maven?
+==================
+Maven simplifies the build process and makes it easier for developers to understand the state of their project 
+Maven helps developers retrieve the correct JAR files for each project 
+Maven helps developers avoid visiting each software's official website to download dependencies 
+
+Introduction to JUnit 5
+============================
+JUnit is a Testing Framework. The Junit 5 is the latest version of the testing framework, and it has a lot of features when compared with Junit 4. JUnit 5, also known as JUnit Jupiter. It introduces several new features and improvements over its predecessor, JUnit 4, making it more powerful and flexible for writing and running tests.
+
+The JUnit 5 version has three different modules for defining and performing different functionalities in testing. The components are:
+
+JUnit Platform
+JUnit Jupiter
+JUnit Vintage
+
+JUnit Platform
+==============
+In Software Industries, The Testing team designs and develops different types of test cases for checking the quality of the application. This means they test application functionality and Behavior in different conditions. After the Test cases are Developed, where we run those test cases. The Answer is, In Java If we want to run the test cases, we need JVM. So, the JUnit Platform provides a launching mechanism for testing frameworks on the JVM.
+
+JUnit Jupiter
+=================
+The second component in Junit 5 is JUnit Jupiter. This component provides new programming techniques for developing the test cases in JUnit 5.
+
+JUnit Vintage
+=================
+The Third component is JUnit Vintage in JUnit 5. The JUnit Vintage functionality is different from the above Two. Before JUnit 5, The Tester uses JUnit 4, JUnit 3, or some other Versions. But nowadays everybody shows interest in JUnit 5 for developing test cases. The Main functionality of JUnit Vintage is allowing JUnit 3 and JUnit 4 Test cases on the JUnit 5 Platform.
+
+The JUnit Provides a lot of features when compared with JUnit 4. If want to learn JUnit 5 then we need to know some basics of the JUnit 5 Framework. Now I provide the basic information about JUnit 5. The basics of JUnit 5 are,
+
+Annotations
+Test Life cycle methods
+Assertions
+Assumptions
+Parameterized Test
+Dynamic Tests
+Tagging and Filtering
+
+Annotations
+============
+The JUnit 5 framework uses different Annotations based on the test case design. Mostly in JUnit 5 @Test, @BeforeEach, @AfterEach, @BeforeAll, @AfterAll, @DisplayName, @Disabled these annotations are used. Basically, Annotations provides supplement information about the program in java. Annotations are always start with "@" symbol. ( reference ).
+
+@Test: Marks a method as a test method.
+@BeforeEach: Indicates that the annotated method should be executed before each test.
+@AfterEach: Indicates that the annotated method should be executed after each test.
+@BeforeAll: Indicates that the annotated method should be executed before all tests in the test class.
+@AfterAll: Indicates that the annotated method should be executed after all tests in the test class.
+@DisplayName: Provides a custom name for the test class or test method.
+@Disabled: Disables the test method or class.
+
+Test Life cycle methods:
+============================
+The JUnit 5 life cycle methods are annotated methods which are always start with @ symbol, these methods are executed at specific point in the test life cycle. The Life cycle methods are,
+
+@BeforeEach, This Annotated method executes before each test method in the test class.
+@AfterEach, This Annotated method executes after each test method in the test class, by sending signals to JUnit
+@BeforeAll, this send signals to JUnit, Like the annotated method should be executed once before all test cased in the class.
+@AfterAll, this annotation send signal to JUnit that is this annotated method should be run after all test cases are executed in the class.
+
+Assertions
+===============
+The JUnit 5 provides different methods in Assertions class for checking the expected Result. Assertions are used to check if a condition is true. If the condition is false, the test fails. Common assertions include:
+
+assertEquals(expected, actual): Checks if two values are equal.
+assertTrue(condition): Checks if a condition is true.
+assertFalse(condition): Checks if a condition is false.
+assertNotNull(object): Checks if an object is not null.
+
+Assumptions
+==================
+Assumptions in JUnit 5 provides a good way for checking the test cases conditionally based on preconditions and one more is if Assumptions is failed then it is marked as skipped rather then failed. Means Assumptions are used to when you want to skip a test then we use Assumptions in JUnit 5.
+
+assumeTrue() this method is used to skip the test when a specified condition is not true for assumeTrue or not false for assumeFalse.
+assumingThat() this method is allowing us, to execute a block of code based on a Boolean Assumptions, If the Assumptions is false the block is skipped.
+
+Parameterized Test
+===================
+This Parameterized Test is used to test a Test case with different parameters for this we use @ParameterizedTest annotations.
+
+Dynamic Tests
+================
+JUnit 5 introduces the concept of dynamic tests, which can be generated at runtime. These are created using the DynamicTest class.
+
+For creating Dynamic Tests in Run time by using @TestFactory annotation. This TestFactory provides a feature to create dynamic test case in the run time of the Application.
